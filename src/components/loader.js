@@ -46,20 +46,14 @@ const Loader = ({ finishLoading }) => {
     loader
       .add({
         targets: '#logo path',
-        delay: 500,
-        duration: 2000,
+        delay: 250,
+        duration: 1200,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo #B',
-        duration: 800,
-        easing: 'easeInOutQuart',
-        opacity: 1,
-      })
-      .add({
         targets: '#logo',
-        delay: 700,
+        delay: 350,
         duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
@@ -67,7 +61,7 @@ const Loader = ({ finishLoading }) => {
       })
       .add({
         targets: '.loader',
-        duration: 200,
+        duration: 100,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,
@@ -84,11 +78,14 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <StyledContainer className="loader">
-      <Helmet bodyAttributes={{ class: `hidden` }} />
-
+      <Helmet
+        bodyAttributes={{
+          class: `hidden`,
+        }}
+      />
       <StyledLogo isMounted={isMounted}>
         <IconLoader />
-      </StyledLogo>
+      </StyledLogo>{' '}
     </StyledContainer>
   );
 };
